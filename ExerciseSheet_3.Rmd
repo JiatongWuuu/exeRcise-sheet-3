@@ -61,6 +61,16 @@ commit after task *1d*, *1e* etc.
 Name 2 strengths and 2 weaknesses of git. (Don't forget to create a
 commit after this answer, see *1c*)
 
+**Strength:** 1. We can track the history, when we made some mistakes,
+we could just go back in time and redo it. 2. Teamwork becomes easier,
+teammates can work online together and check who made what changes.
+
+**Weaknesses:** 1. It was difficult at first for all members to learn
+new online tools when we were already used to working together face to
+face. Sometimes it gets really messy when we sync changes between
+teammates. 2. It is complex when people working on a large scale
+project. Large binary files are also difficult to work with git.
+
 ### e)
 
 Knit this exercise sheet. Some new files will automatically be generated
@@ -151,7 +161,10 @@ column_means \<- lapply(tax_data$$, -1$$, 2, mean)
 column_means
 
 ### b)
-Using ChatGPT try to understand what the rapply() function does. Create an easy example with mock data where the function is used and explain it in your words.
+
+Using ChatGPT try to understand what the rapply() function does. Create
+an easy example with mock data where the function is used and explain it
+in your words.
 
 ## Final Note
 
