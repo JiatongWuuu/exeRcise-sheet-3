@@ -158,7 +158,8 @@ sum(vornamen_2021$Anzahl)
 sum(vornamen_2022$Anzahl)
 ```
 
-The total number of babies born in 2021 is 26620, and the total number in 2022 is 25199. Therefore 2021 had the bigger baby-boom.
+The total number of babies born in 2021 is 26620, and the total number
+in 2022 is 25199. Therefore 2021 had the bigger baby-boom.
 
 ### d)
 
@@ -196,7 +197,6 @@ library(knitr)
 kable(popular_names, caption = "Top 10 Most Popular Names in 2021/22")
 ```
 
-
 ## Exercise 4: Chat GPT + apply (3 points)
 
 For this task: Specifically use ChatGPT to solve the task and submit
@@ -215,11 +215,28 @@ tax_data \<- data.frame( Name = c("Munich GmbH", "ABC Inc.", "Backpacks
 Tax_2020 = c(4800, 4200, 5800, 3700), Tax_2021 = c(5200, 3800, 5900,
 3400) )
 
+```{r}
+#There is a "\" that should not be exist when naming the data frame, and the corrected code:
+tax_data <- data.frame(
+  Name = c("Munich GmbH", "ABC Inc.", "Backpacks 1980", "Bavarian Circus"),
+  Tax_2019 = c(5000, 4000, 6000, 3500),
+  Tax_2020 = c(4800, 4200, 5800, 3700),
+  Tax_2021 = c(5200, 3800, 5900, 3400)
+)
+```
+
 #### Calculate column-wise means
 
-column_means \<- lapply(tax_data$$, -1$$, 2, mean)
+column_means \<- lapply(tax_data[, -1], mean)
 
 column_means
+
+```{r}
+#row-wise means
+row_means <- apply(tax_data[, -1], 1, mean)
+row_means
+```
+
 
 ### b)
 
