@@ -165,6 +165,11 @@ The total number of babies born in 2021 is 26620, and the total number in 2022 i
 Add a new column `year` to both datasets which holds the correct year
 for each.
 
+```{r}
+vornamen_2021$year <- 2021
+vornamen_2022$year <- 2022
+```
+
 ### e)
 
 Combine both datasets into one using `bind_rows()`.
