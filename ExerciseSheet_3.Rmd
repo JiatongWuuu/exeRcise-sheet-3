@@ -120,6 +120,34 @@ numeric? Fix the problem in an appropriate manner, it is OK if some of
 the counts are inaccurate because of this. Explain your solution and the
 repercussions.
 
+```{r}
+library(readr)
+vornamen_2021 <- read_csv("C:/Users/jiato/Desktop/vornamen_2021.csv")
+
+vornamen_2022<- read_csv("C:/Users/jiato/Desktop/open_data_portal_2022.csv")
+```
+
+When we check the values under "Anzahl", we will find out that when some
+names of newborns is 4 or less than 4, the value shows as "4 oder
+weniger". That is why the value is not all numeric.
+
+```{r}
+vornamen_2021$Anzahl <- as.character(vornamen_2021$Anzahl)
+vornamen_2021$Anzahl[vornamen_2021$Anzahl == "4 oder weniger"] <- "4"
+vornamen_2021$Anzahl <- as.numeric(vornamen_2021$Anzahl)
+
+vornamen_2022$Anzahl <- as.character(vornamen_2022$Anzahl)
+vornamen_2022$Anzahl[vornamen_2022$Anzahl == "4 oder weniger"] <- "4"
+vornamen_2022$Anzahl <- as.numeric(vornamen_2022$Anzahl)
+```
+
+We have to replace the non-numeric values "oder weniger" to the value 4.
+First we use as.character to change all values to characters, then we
+replace "4 oder weniger" with "4". But the value of this number is still
+a character now, so we have to use as.numeric to change the value to
+numeric data. But the count might be inaccurate because all values less
+than 4 are counted as 4.
+
 ### c)
 
 Calculate the total number of babies born in Munich in 2022 and 2021.
